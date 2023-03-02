@@ -48,6 +48,26 @@
 
 .home__image {
   display: inline-block;
-  width: 100%;
+  width: 90%;
   max-width: 800px;
+  padding-top:3rem
+}
+
+@media (max-width: 768px){}
+
+@media (max-width: 550px){
+    .page__title{
+        font-size: 32px;
+    }
+    .page__subtitle{
+        font-size: 18px;
+    }
+    .started__button{
+        margin-top: 4rem;
+        padding: 2rem;
+        font-size: 18px;
+    }
+    .home__image{
+        width: 400px;
+    }
 }
