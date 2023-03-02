@@ -1,0 +1,41 @@
+.user__data--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  padding: 1rem 0;
+}
+
+.loading__container{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner{
+    width: 30%;
+}
+
+.subtitle {
+  letter-spacing: 1.5px;
+  text-align: center;
+  font-size: 18px;
+  padding: 0 0 1rem;
+}
+
+.table__container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 80vh;
+}
+
+.tools__container {
+  display: flex;
+  justify-content: space-between;
+}

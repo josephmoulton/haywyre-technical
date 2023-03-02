@@ -26,7 +26,7 @@ function Header({ search }) {
             <Link to="/users" className="header__link">
               Users
             </Link>
-            <Link to="/comments:1" className="header__link">
+            <Link to="/comments/:1" className="header__link">
               Data Tables
             </Link>
             <Link to="/">

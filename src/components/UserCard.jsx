@@ -8,7 +8,7 @@ function UserCard({ userInfo }) {
   return (
     <div
       className="userCard__container"
-      onClick={() => navigate(`/comments:${userInfo.id}`)}
+      onClick={() => navigate(`/comments/:${userInfo.id}`)}
     >
       <div className="user__logo">
         <Avatar

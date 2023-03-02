@@ -33,7 +33,7 @@ function Users() {
       <div className="container">
         <div className="users__list">
           {userData.map((user) => (
-            <UserCard userInfo={user} />
+            <UserCard userInfo={user} key={user.id}/>
           ))}
         </div>
       </div>
