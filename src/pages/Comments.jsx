@@ -66,6 +66,7 @@ function EditToolbar(props) {
     });
   };
 
+
   const handleRefresh = () => {
     document.location.reload();
   };

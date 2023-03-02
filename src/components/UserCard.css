@@ -11,13 +11,17 @@
 }
 
 .userCard__container:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
   border-radius: 10px;
 }
 
 .user__username {
-  margin: 0 10px;
+  margin-left: 10px;
+  max-width: 70px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .user__logo {
