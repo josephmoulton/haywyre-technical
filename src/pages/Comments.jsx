@@ -12,6 +12,7 @@ import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import SaveIcon from "@mui/icons-material/Save";
+import RefreshIcon from "@mui/icons-material/Refresh";
 import CancelIcon from "@mui/icons-material/Close";
 import { Avatar } from "@mui/material";
 import {
@@ -47,15 +48,14 @@ function EditToolbar(props) {
       ...oldRows,
       {
         id,
-        username: "temp",
-        name: "temp",
-        email: "temp@temp.com",
+        email: "example@gmail.com",
+        body: "post text",
         isNew: true,
       },
     ]);
     setRowModesModel((oldModel) => ({
       ...oldModel,
-      [id]: { mode: GridRowModes.Edit, fieldToFocus: "name" },
+      [id]: { mode: GridRowModes.Edit, fieldToFocus: "email" },
     }));
     api.post(`/users/${id}`, {
       id,
@@ -65,6 +65,11 @@ function EditToolbar(props) {
       isNew: true,
     });
   };
+
+  const handleRefresh = () => {
+    document.location.reload();
+  };
+
   return (
     <GridToolbarContainer className="tools__container">
       <div>
@@ -73,9 +78,18 @@ function EditToolbar(props) {
         <GridToolbarDensitySelector />
         <GridToolbarExport />
       </div>
-      <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-        Add record
-      </Button>
+      <div>
+        <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
+          Add record
+        </Button>
+        <Button
+          color="primary"
+          startIcon={<RefreshIcon />}
+          onClick={handleRefresh}
+        >
+          Refresh Records
+        </Button>
+      </div>
     </GridToolbarContainer>
   );
 }
@@ -109,7 +123,7 @@ function Comments() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [id]);
 
   const handleRowEditStart = (params, event) => {
     event.defaultMuiPrevented = true;
