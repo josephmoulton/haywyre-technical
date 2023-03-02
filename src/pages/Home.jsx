@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import HomeImage from "../assets/undraw_dashboard_re_3b76.svg";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -17,10 +18,16 @@ function Home() {
           </h3>
         </div>
         <div className="button__container">
-          <button className="started__button">GET STARTED</button>
+          <Link to="/users">
+            <button className="started__button">GET STARTED</button>
+          </Link>
         </div>
         <div className="image__container">
-          <img className="home__image" src={HomeImage} alt="An image that shows a man with a chart" />
+          <img
+            className="home__image"
+            src={HomeImage}
+            alt="An image that shows a man with a chart"
+          />
         </div>
       </div>
     </>
