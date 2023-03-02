@@ -13,8 +13,10 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import SaveIcon from "@mui/icons-material/Save";
 import RefreshIcon from "@mui/icons-material/Refresh";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import CancelIcon from "@mui/icons-material/Close";
 import { Avatar } from "@mui/material";
+import { Link } from "react-router-dom";
 import {
   GridRowsProp,
   GridRowModesModel,
@@ -72,6 +74,12 @@ function EditToolbar(props) {
   return (
     <GridToolbarContainer className="tools__container">
       <div>
+        <Link to="/users">
+          <Button
+            color="primary"
+            startIcon={<KeyboardDoubleArrowLeftIcon />}
+          ></Button>
+        </Link>
         <GridToolbarColumnsButton />
         <GridToolbarFilterButton />
         <GridToolbarDensitySelector />
