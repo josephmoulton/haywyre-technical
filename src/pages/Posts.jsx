@@ -57,7 +57,7 @@ function EditToolbar(props) {
       ...oldModel,
       [id]: { mode: GridRowModes.Edit, fieldToFocus: "email" },
     }));
-    api.post(`/users/${id}`, {
+    api.post(`/posts/${id}`, {
       id,
       title: "temp",
       body: "temp",
@@ -146,7 +146,7 @@ function Posts() {
 
   const handleDeleteClick = (id) => () => {
     setRows(rows.filter((row) => row.id !== id));
-    api.delete(`/users/${id}`);
+    api.delete(`/posts/${id}`);
   };
 
   const handleCancelClick = (id) => () => {
@@ -164,7 +164,7 @@ function Posts() {
   const processRowUpdate = (newRow) => {
     const updatedRow = { ...newRow, isNew: false };
     setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
-    api.patch(`/users/${newRow.id}`, newRow);
+    api.patch(`/posts/${newRow.id}`, newRow);
     return updatedRow;
   };
 
