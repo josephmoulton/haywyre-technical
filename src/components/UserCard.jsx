@@ -6,10 +6,7 @@ import { useNavigate } from "react-router-dom";
 function UserCard({ userInfo }) {
   const navigate = useNavigate();
   return (
-    <div
-      className="userCard__container"
-      onClick={() => navigate(`/comments/:${userInfo.id}`)}
-    >
+    <div className="userCard__container">
       <div className="user__logo">
         <Avatar
           sx={{
@@ -24,7 +21,10 @@ function UserCard({ userInfo }) {
         <div className="user__phone">{userInfo.name}</div>
         <div className="user__email">{userInfo.email}</div>
         <div className="user__website">{userInfo.website}</div>
-        <div className="user__phone">{userInfo.phone}</div>
+      </div>
+      <div className="button__links">
+        <button className="button__link" onClick={() => navigate(`/comments/:${userInfo.id}`)}>Comments</button>
+        <button className="button__link"onClick={() => navigate(`/posts/:${userInfo.id}`)}>Posts</button>
       </div>
     </div>
   );
